@@ -189,6 +189,10 @@ main {
   gap: 1.5rem;
 }
 
+.connect-panel + .connect-panel {
+  margin-top: 2rem;
+}
+
 .connect-grid {
   display: grid;
   gap: 1.5rem;
@@ -226,6 +230,11 @@ main {
   padding: 0.75rem 0.9rem;
   font: inherit;
   background: #fff;
+}
+
+.contact-form textarea {
+  resize: none;
+  min-height: 140px;
 }
 
 .contact-form input:focus,
