@@ -1,61 +1,117 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal CV website for GitHub Pages.">
     <title>My Personal CV</title>
     <style>
+        :root {
+            color-scheme: light dark;
+            --page-bg: #f9f9f9;
+            --text-color: #333;
+            --header-bg: #fff;
+            --card-bg: #fff;
+            --accent: #007acc;
+            --border: #eee;
+            --shadow: rgba(0, 0, 0, 0.05);
+            --toggle-bg: #f0f2f5;
+        }
+
+        [data-theme="dark"] {
+            --page-bg: #121417;
+            --text-color: #e6e8eb;
+            --header-bg: #1b1f24;
+            --card-bg: #1f242a;
+            --accent: #6cb6ff;
+            --border: #2c3238;
+            --shadow: rgba(0, 0, 0, 0.4);
+            --toggle-bg: #2b3138;
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             line-height: 1.6;
-            background-color: #f9f9f9;
-            color: #333;
+            background-color: var(--page-bg);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
         header {
-            background: #fff;
+            background: var(--header-bg);
             padding: 2rem;
             text-align: center;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 2px 6px var(--shadow);
+        }
+        .header-top {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
         }
         nav {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             gap: 1rem;
             margin-bottom: 2rem;
         }
         nav a {
             text-decoration: none;
-            color: #007acc;
+            color: var(--accent);
             font-weight: bold;
+        }
+        main {
+            padding-bottom: 2rem;
         }
         section {
             max-width: 800px;
             margin: auto;
             padding: 2rem;
-            background: white;
+            background: var(--card-bg);
             margin-bottom: 1rem;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 4px var(--shadow);
+            border: 1px solid var(--border);
         }
         h2 {
-            color: #007acc;
+            color: var(--accent);
+        }
+        .theme-toggle {
+            border: 1px solid var(--border);
+            background: var(--toggle-bg);
+            color: var(--text-color);
+            padding: 0.6rem 1.2rem;
+            border-radius: 999px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        .theme-toggle:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 3px;
         }
         footer {
             text-align: center;
             padding: 2rem;
             font-size: 0.9rem;
-            color: #777;
+            color: var(--text-color);
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Your Name</h1>
-    <p>Product Manager | Book Lover | Health Enthusiast</p>
+    <div class="header-top">
+        <div>
+            <h1>Your Name</h1>
+            <p>Product Manager | Book Lover | Health Enthusiast</p>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false">
+            Switch to dark mode
+        </button>
+    </div>
     <nav>
         <a href="#about">About</a>
         <a href="#product">Product Management</a>
@@ -65,34 +121,61 @@
     </nav>
 </header>
 
-<section id="about">
-    <h2>About Me</h2>
-    <p>Write a short introduction about yourself here. Mention your background, your interests, and what you're currently working on.</p>
-</section>
+<main>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Write a short introduction about yourself here. Mention your background, your interests, and what you're currently working on.</p>
+    </section>
 
-<section id="product">
-    <h2>Product Management</h2>
-    <p>Highlight your experience, philosophy, or key achievements in product management. Mention tools you use and what kind of problems you solve.</p>
-</section>
+    <section id="product">
+        <h2>Product Management</h2>
+        <p>Highlight your experience, philosophy, or key achievements in product management. Mention tools you use and what kind of problems you solve.</p>
+    </section>
 
-<section id="books">
-    <h2>Books</h2>
-    <p>Talk about books you're reading, your favorites, or even book reviews or recommendations you offer.</p>
-</section>
+    <section id="books">
+        <h2>Books</h2>
+        <p>Talk about books you're reading, your favorites, or even book reviews or recommendations you offer.</p>
+    </section>
 
-<section id="health">
-    <h2>Health</h2>
-    <p>Share your approach to staying healthy, fitness routines, mental health tips, or anything you value related to wellness.</p>
-</section>
+    <section id="health">
+        <h2>Health</h2>
+        <p>Share your approach to staying healthy, fitness routines, mental health tips, or anything you value related to wellness.</p>
+    </section>
 
-<section id="connect">
-    <h2>Connect</h2>
-    <p>Let people know how they can reach out to you. Include links to your LinkedIn, email, or other social media.</p>
-</section>
+    <section id="connect">
+        <h2>Connect</h2>
+        <p>Let people know how they can reach out to you. Include links to your LinkedIn, email, or other social media.</p>
+    </section>
+</main>
 
 <footer>
     &copy; 2026 Your Name. All rights reserved.
 </footer>
+
+<script>
+    const toggleButton = document.getElementById('theme-toggle');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const savedTheme = localStorage.getItem('theme');
+    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+
+    document.documentElement.setAttribute('data-theme', initialTheme);
+    toggleButton.setAttribute('aria-pressed', initialTheme === 'dark');
+    toggleButton.textContent = initialTheme === 'dark'
+        ? 'Switch to light mode'
+        : 'Switch to dark mode';
+
+    toggleButton.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+        document.documentElement.setAttribute('data-theme', nextTheme);
+        localStorage.setItem('theme', nextTheme);
+        toggleButton.setAttribute('aria-pressed', nextTheme === 'dark');
+        toggleButton.textContent = nextTheme === 'dark'
+            ? 'Switch to light mode'
+            : 'Switch to dark mode';
+    });
+</script>
 
 </body>
 </html>
