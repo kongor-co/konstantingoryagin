@@ -16,20 +16,102 @@
 <header data-site-header></header>
 
 <main>
-    <section class="content-panel">
+    <div class="page-intro">
         <h2>Blog</h2>
-        <p>Space for random thoughts and interesting ideas.</p>
-        <ul class="highlight-list">
-            <li>Latest note: tease a new idea or learning.</li>
-            <li>Ongoing series: share a theme you're exploring.</li>
-            <li>Upcoming topics: list what is next on your writing queue.</li>
-        </ul>
+        <p>Curated articles to read, revisit, and share with the community.</p>
+    </div>
+    <section class="article-section">
+        <div class="article-banner">
+            <img src="https://images.unsplash.com/photo-1485988412941-77a35537dae4?auto=format&fit=crop&w=1400&q=80" alt="Sunlit desk with notebooks and a laptop">
+        </div>
+        <div class="article-content">
+            <h3>Designing Daily Focus</h3>
+            <p class="article-excerpt">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae ligula ut
+                purus gravida aliquet eget sit amet arcu. Integer a quam at lacus interdum
+                commodo at sed urna.
+            </p>
+            <div class="article-body" id="article-1" hidden>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet
+                    vestibulum nisl. Duis sodales mi non lorem posuere, in convallis purus
+                    malesuada. Curabitur accumsan ipsum ut sapien ullamcorper, sit amet
+                    condimentum ipsum suscipit.
+                </p>
+            </div>
+            <button class="article-toggle" type="button" aria-expanded="false" aria-controls="article-1">
+                Read full article
+            </button>
+        </div>
+    </section>
+    <section class="article-section">
+        <div class="article-banner">
+            <img src="https://images.unsplash.com/photo-1472289065668-ce650ac443d2?auto=format&fit=crop&w=1400&q=80" alt="City skyline at dusk with warm lights">
+        </div>
+        <div class="article-content">
+            <h3>Notes on Calm Evenings</h3>
+            <p class="article-excerpt">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id quam
+                vitae massa iaculis sodales. Mauris aliquet nibh vel turpis gravida
+                ullamcorper at id est.
+            </p>
+            <div class="article-body" id="article-2" hidden>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a arcu
+                    finibus, facilisis libero at, molestie lacus. Integer vitae augue nec
+                    mauris laoreet pretium sed id mauris.
+                </p>
+            </div>
+            <button class="article-toggle" type="button" aria-expanded="false" aria-controls="article-2">
+                Read full article
+            </button>
+        </div>
+    </section>
+    <section class="article-section">
+        <div class="article-banner">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80" alt="Forest path with soft morning light">
+        </div>
+        <div class="article-content">
+            <h3>Walking Through New Ideas</h3>
+            <p class="article-excerpt">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum
+                est non arcu accumsan, in mattis urna volutpat. Sed ut magna nec velit
+                malesuada luctus.
+            </p>
+            <div class="article-body" id="article-3" hidden>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+                    ullamcorper, arcu in sodales pellentesque, quam metus porttitor justo,
+                    non posuere lacus nibh non nulla.
+                </p>
+            </div>
+            <button class="article-toggle" type="button" aria-expanded="false" aria-controls="article-3">
+                Read full article
+            </button>
+        </div>
     </section>
 </main>
 
 <footer>
     &copy; 2026 Konstantin Goryagin. All rights reserved.
 </footer>
+
+<script>
+    const toggleButtons = document.querySelectorAll(".article-toggle");
+
+    toggleButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const targetId = button.getAttribute("aria-controls");
+            const target = document.getElementById(targetId);
+            const isExpanded = button.getAttribute("aria-expanded") === "true";
+
+            button.setAttribute("aria-expanded", String(!isExpanded));
+            button.textContent = isExpanded ? "Read full article" : "Collapse article";
+            target.hidden = isExpanded;
+            button.closest(".article-section").classList.toggle("is-expanded", !isExpanded);
+        });
+    });
+</script>
 
 </body>
 </html>
