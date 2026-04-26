@@ -215,6 +215,7 @@ h3 {
   display: grid;
   gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-bottom: 2rem;
 }
 
 .section-card {
