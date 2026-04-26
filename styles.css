@@ -90,21 +90,29 @@ header {
 .header-inner {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
   position: relative;
 }
 
-.header-bar {
+.header-top {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  gap: 1.25rem;
+  gap: 1rem;
+}
+
+.header-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
 }
 
 .site-brand {
   margin: 0;
-  flex: 0 0 auto;
-  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-size: 2.2rem;
   font-weight: 700;
   text-decoration: none;
   letter-spacing: -0.03em;
@@ -137,11 +145,14 @@ header {
   line-height: 1;
 }
 
+.header-title p {
+  margin: 0;
+  color: var(--muted);
+}
+
 nav {
   display: flex;
-  flex: 1 1 auto;
   flex-wrap: wrap;
-  justify-content: flex-end;
   gap: 0.75rem;
 }
 
@@ -183,8 +194,10 @@ h3 {
 }
 
 .hero {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  align-items: center;
   margin-bottom: 2rem;
 }
 
@@ -194,41 +207,36 @@ h3 {
   padding: 2.2rem;
   box-shadow: var(--shadow);
   border: 1px solid var(--border);
-  width: min(100%, 980px);
-  text-align: center;
 }
 
 .hero-card h1 {
   margin-top: 0;
   margin-bottom: 0.75rem;
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-size: clamp(2rem, 4vw, 3.4rem);
 }
 
 .hero-card p {
   margin-bottom: 0;
   color: var(--muted);
-  font-size: clamp(1.1rem, 2vw, 1.35rem);
-  font-weight: 500;
-  max-width: 46rem;
-  margin-left: auto;
-  margin-right: auto;
+  font-size: 1.05rem;
+  max-width: 42rem;
 }
 
-.home-grid {
+.section-grid {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 1.5rem;
-  justify-content: center;
-  max-width: 980px;
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
 .section-card {
   background: var(--surface);
+  padding: 1.6rem;
   border-radius: 18px;
   border: 1px solid var(--border);
   box-shadow: 0 12px 24px rgba(15, 23, 42, 0.06);
-  min-height: 210px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .section-card h2 {
@@ -237,59 +245,14 @@ h3 {
 }
 
 .section-card p {
-  margin: 0.75rem 0 0;
+  margin: 0;
   color: var(--muted);
 }
 
-.section-card-link {
-  display: flex;
+.section-card a {
+  color: var(--primary);
+  font-weight: 600;
   text-decoration: none;
-  color: inherit;
-  transition:
-    transform 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease,
-    background 0.2s ease;
-}
-
-.section-card-link article {
-  display: flex;
-  flex: 1 1 auto;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  padding: 1.6rem;
-  text-align: center;
-}
-
-.section-card-link:hover,
-.section-card-link:focus-visible {
-  transform: translateY(-2px);
-  border-color: rgba(37, 99, 235, 0.35);
-  box-shadow: 0 20px 34px rgba(15, 23, 42, 0.12);
-  background: linear-gradient(180deg, var(--surface), var(--surface-muted));
-}
-
-.section-card-link:focus-visible,
-.theme-toggle:focus-visible,
-.button-primary:focus-visible,
-.button-secondary:focus-visible,
-nav a:focus-visible,
-.skip-link:focus {
-  outline: 3px solid var(--primary);
-  outline-offset: 3px;
-}
-
-.home-grid > :nth-child(-n + 3) {
-  grid-column: span 2;
-}
-
-.home-grid > :nth-child(4) {
-  grid-column: 2 / span 2;
-}
-
-.home-grid > :nth-child(5) {
-  grid-column: 4 / span 2;
 }
 
 .content-panel {
@@ -602,10 +565,10 @@ footer {
 
 @media (max-width: 720px) {
   .header-inner {
-    padding: 1rem 1.5rem;
+    padding: 1.5rem;
   }
 
-  .header-bar {
+  .header-top {
     flex-direction: column;
     align-items: stretch;
   }
@@ -616,21 +579,6 @@ footer {
 
   main {
     padding: 2rem 1.5rem 2.5rem;
-  }
-
-  nav {
-    justify-content: flex-start;
-  }
-
-  .home-grid {
-    grid-template-columns: 1fr;
-    max-width: 32rem;
-  }
-
-  .home-grid > :nth-child(-n + 3),
-  .home-grid > :nth-child(4),
-  .home-grid > :nth-child(5) {
-    grid-column: auto;
   }
 
   .book-row,
@@ -655,28 +603,5 @@ footer {
   .button-secondary,
   .theme-toggle {
     width: 100%;
-  }
-}
-
-@media (min-width: 721px) and (max-width: 980px) {
-  .header-bar {
-    flex-wrap: wrap;
-  }
-
-  nav {
-    justify-content: flex-start;
-    order: 3;
-    width: 100%;
-  }
-
-  .home-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    max-width: 44rem;
-  }
-
-  .home-grid > :nth-child(-n + 3),
-  .home-grid > :nth-child(4),
-  .home-grid > :nth-child(5) {
-    grid-column: auto;
   }
 }
