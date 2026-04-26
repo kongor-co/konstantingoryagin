@@ -1,5 +1,4 @@
 const SITE_NAME = "Konstantin Goryagin";
-const SITE_TAGLINE = "Modern CV and insights on books, wellness, and personal growth.";
 const headerContent = `
   <div class="header-inner">
     <a class="skip-link" href="#main-content">Skip to content</a>
