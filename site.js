@@ -1,22 +1,26 @@
 const SITE_NAME = "Konstantin Goryagin";
+const SITE_TAGLINE = "Modern CV and insights on books, wellness, and personal growth.";
 const headerContent = `
   <div class="header-inner">
     <a class="skip-link" href="#main-content">Skip to content</a>
     <div class="header-top">
-      <a class="site-brand" href="/index.html">${SITE_NAME}</a>
-      <nav aria-label="Primary">
-        <a href="/index.html" data-page="index">Home</a>
-        <a href="/about.html" data-page="about">About</a>
-        <a href="/books.html" data-page="books">Books</a>
-        <a href="/health.html" data-page="health">Health</a>
-        <a href="/blog.html" data-page="blog">Blog</a>
-        <a href="/connect.html" data-page="connect">Connect</a>
-      </nav>
+      <div class="header-title">
+        <a class="site-brand" href="/index.html">${SITE_NAME}</a>
+        <p>${SITE_TAGLINE}</p>
+      </div>
       <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">
         <span class="theme-toggle-icon" aria-hidden="true">\u263E</span>
         <span class="theme-toggle-text">Dark</span>
       </button>
     </div>
+    <nav aria-label="Primary">
+      <a href="/index.html" data-page="index">Home</a>
+      <a href="/about.html" data-page="about">About</a>
+      <a href="/books.html" data-page="books">Books</a>
+      <a href="/health.html" data-page="health">Health</a>
+      <a href="/blog.html" data-page="blog">Blog</a>
+      <a href="/connect.html" data-page="connect">Connect</a>
+    </nav>
   </div>
 `;
 
