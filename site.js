@@ -3,10 +3,7 @@ const headerContent = `
   <div class="header-inner">
     <a class="skip-link" href="#main-content">Skip to content</a>
     <div class="header-top">
-      <div class="header-title">
-        <a class="site-brand" href="/index.html">${SITE_NAME}</a>
-        <p>${SITE_TAGLINE}</p>
-      </div>
+      <a class="site-brand" href="/index.html">${SITE_NAME}</a>
       <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">
         <span class="theme-toggle-icon" aria-hidden="true">\u263E</span>
         <span class="theme-toggle-text">Dark</span>
