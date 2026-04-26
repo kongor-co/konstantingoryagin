@@ -3,58 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Konstantin Goryagin personal website">
-    <title>My Personal CV</title>
+    <meta name="description" content="Konstantin Goryagin personal website with a modern CV, books, wellness notes, and contact information.">
+    <meta name="theme-color" content="#0b1220">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Konstantin Goryagin">
+    <meta property="og:description" content="Modern CV and insights on books, wellness, and personal growth.">
+    <meta property="og:url" content="https://www.konstantingoryagin.com/">
+    <meta name="twitter:card" content="summary">
+    <title>Home | Konstantin Goryagin</title>
+    <link rel="canonical" href="https://www.konstantingoryagin.com/">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <script src="header.js" defer></script>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/site.js" defer></script>
 </head>
 <body>
 
 <header data-site-header></header>
 
-<main>
+<main id="main-content">
     <section class="hero">
         <div class="hero-card">
-            <h2>Welcome to my personal space</h2>
+            <h1>Welcome to my personal space</h1>
             <p>Explore with me, read, get healthy, and check the ideas I share.</p>
         </div>
     </section>
 
-    <section class="section-grid">
+    <section class="section-grid" aria-label="Site sections">
         <article class="section-card">
-            <h3>About</h3>
+            <h2>About</h2>
             <p>Get a quick overview of my background, interests, and current focus.</p>
-            <a href="about">Visit About →</a>
+            <a href="/about.html">Visit About &rarr;</a>
         </article>
         <article class="section-card">
-            <h3>Books</h3>
+            <h2>Books</h2>
             <p>Discover what I am reading and the ideas inspiring my work.</p>
-            <a href="books">Visit Books →</a>
+            <a href="/books.html">Visit Books &rarr;</a>
         </article>
         <article class="section-card">
-            <h3>Health</h3>
+            <h2>Health</h2>
             <p>See the habits and routines that keep me energized.</p>
-            <a href="health">Visit Health →</a>
+            <a href="/health.html">Visit Health &rarr;</a>
         </article>
         <article class="section-card">
-            <h3>Blog</h3>
+            <h2>Blog</h2>
             <p>Short reflections, notes, and experiments.</p>
-            <a href="blog">Visit Blog →</a>
+            <a href="/blog.html">Visit Blog &rarr;</a>
         </article>
         <article class="section-card">
-            <h3>Connect</h3>
+            <h2>Connect</h2>
             <p>Reach out for collaborations, coffee chats, or friendly hellos.</p>
-            <a href="connect">Visit Connect →</a>
+            <a href="/connect.html">Visit Connect &rarr;</a>
         </article>
     </section>
 </main>
 
-<footer>
-    &copy; 2026 Konstantin Goryagin. All rights reserved.
-</footer>
+<footer data-site-footer></footer>
 
 </body>
 </html>

@@ -3,60 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ways to connect and reach out.">
-    <title>Connect · My Personal CV</title>
+    <meta name="description" content="Ways to connect with Konstantin Goryagin.">
+    <meta name="theme-color" content="#0b1220">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Connect | Konstantin Goryagin">
+    <meta property="og:description" content="Email, scheduling, and LinkedIn contact options.">
+    <meta property="og:url" content="https://www.konstantingoryagin.com/connect.html">
+    <meta name="twitter:card" content="summary">
+    <title>Connect | Konstantin Goryagin</title>
+    <link rel="canonical" href="https://www.konstantingoryagin.com/connect.html">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <script src="header.js" defer></script>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/site.js" defer></script>
 </head>
 <body>
 
 <header data-site-header></header>
 
-<main>
+<main id="main-content">
     <section class="content-panel connect-panel">
-        <h2>Connect</h2>
-        <p>Reach out with a message, book a call, or connect on LinkedIn.</p>
+        <h1>Connect</h1>
+        <p>Reach out by email, book a call, or connect on LinkedIn.</p>
     </section>
-    
+
     <section class="content-panel connect-panel">
         <div class="connect-grid">
-            <form class="connect-card contact-form" action="mailto:konstantin@kongor.co" method="post" enctype="text/plain">
-                <h3>Send a message</h3>
-                <label>                    
-                    <input type="text" name="name" placeholder="Your name" required>
-                </label>
-                <label>                    
-                    <input type="email" name="email" placeholder="Your email address" required>
-                </label>
-                <label>                    
-                    <textarea name="message" rows="5" placeholder="Your message" required></textarea>
-                </label>
-                <button type="submit" class="button-primary">Send message</button>
-            </form>
-        </div>
-    </section>
-
-    <section class="content-panel connect-panel">
-        <div class="connect-card connect-actions">
-            <h3>Prefer a live conversation? Grab a time that works best for you.</h3>
-            <a class="button-primary" href="https://calendar.app.google/ih252AStM5qG3P7A7" target="_blank" rel="noopener">Book a call</a>
-        </div>        
-    </section>
-
-    <section class="content-panel connect-panel">
-        <div class="connect-card connect-actions">
-            <h3>Prefer LinkedIn?</h3>
-            <a class="button-primary" href="https://www.linkedin.com/in/konstantin-goryagin/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+            <article class="connect-card">
+                <h2>Email</h2>
+                <p>For collaborations, questions, or a quick hello, email me directly.</p>
+                <p class="contact-detail">
+                    <a class="contact-link" href="mailto:konstantin@kongor.co">konstantin@kongor.co</a>
+                </p>
+                <div class="button-row">
+                    <a class="button-primary" href="mailto:konstantin@kongor.co">Open email app</a>
+                    <button
+                        class="button-secondary"
+                        type="button"
+                        data-copy-email="konstantin@kongor.co"
+                        data-feedback-target="email-copy-feedback">
+                        Copy email
+                    </button>
+                </div>
+                <p class="feedback-text" id="email-copy-feedback" aria-live="polite"></p>
+            </article>
+            <article class="connect-card connect-actions">
+                <h2>Book a call</h2>
+                <p>Prefer a live conversation? Grab a time that works best for you.</p>
+                <a class="button-primary" href="https://calendar.app.google/ih252AStM5qG3P7A7" target="_blank" rel="noopener">Book a call</a>
+            </article>
+            <article class="connect-card connect-actions">
+                <h2>LinkedIn</h2>
+                <p>Reach out professionally or send a connection request on LinkedIn.</p>
+                <a class="button-primary" href="https://www.linkedin.com/in/konstantin-goryagin/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+            </article>
         </div>
     </section>
 </main>
 
-<footer>
-    &copy; 2026 Konstantin Goryagin. All rights reserved.
-</footer>
+<footer data-site-footer></footer>
 
 </body>
 </html>

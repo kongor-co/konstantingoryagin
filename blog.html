@@ -3,29 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Short reflections, notes, and ideas.">
-    <title>Blog · My Personal CV</title>
+    <meta name="description" content="Short reflections, notes, and ideas from Konstantin Goryagin.">
+    <meta name="theme-color" content="#0b1220">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Blog | Konstantin Goryagin">
+    <meta property="og:description" content="Short reflections, notes, and ideas.">
+    <meta property="og:url" content="https://www.konstantingoryagin.com/blog.html">
+    <meta name="twitter:card" content="summary">
+    <title>Blog | Konstantin Goryagin</title>
+    <link rel="canonical" href="https://www.konstantingoryagin.com/blog.html">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <script src="header.js" defer></script>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/site.js" defer></script>
 </head>
 <body>
 
 <header data-site-header></header>
 
-<main>
+<main id="main-content">
     <div class="page-intro">
-        <h2>Blog</h2>
+        <h1>Blog</h1>
         <p>Curated articles to read, revisit, and share with the community.</p>
     </div>
     <section class="article-section">
         <div class="article-banner">
-            <img src="https://images.unsplash.com/photo-1485988412941-77a35537dae4?auto=format&fit=crop&w=1400&q=80" alt="Sunlit desk with notebooks and a laptop">
+            <img src="/assets/blog-focus.svg" alt="Abstract illustration for daily focus" loading="lazy">
         </div>
         <div class="article-content">
-            <h3>Designing Daily Focus</h3>
+            <h2>Designing Daily Focus</h2>
             <p class="article-excerpt">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae ligula ut
                 purus gravida aliquet eget sit amet arcu. Integer a quam at lacus interdum
@@ -46,10 +54,10 @@
     </section>
     <section class="article-section">
         <div class="article-banner">
-            <img src="https://images.unsplash.com/photo-1472289065668-ce650ac443d2?auto=format&fit=crop&w=1400&q=80" alt="City skyline at dusk with warm lights">
+            <img src="/assets/blog-evenings.svg" alt="Abstract illustration for calm evenings" loading="lazy">
         </div>
         <div class="article-content">
-            <h3>Notes on Calm Evenings</h3>
+            <h2>Notes on Calm Evenings</h2>
             <p class="article-excerpt">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id quam
                 vitae massa iaculis sodales. Mauris aliquet nibh vel turpis gravida
@@ -69,10 +77,10 @@
     </section>
     <section class="article-section">
         <div class="article-banner">
-            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80" alt="Forest path with soft morning light">
+            <img src="/assets/blog-ideas.svg" alt="Abstract illustration for new ideas" loading="lazy">
         </div>
         <div class="article-content">
-            <h3>Walking Through New Ideas</h3>
+            <h2>Walking Through New Ideas</h2>
             <p class="article-excerpt">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum
                 est non arcu accumsan, in mattis urna volutpat. Sed ut magna nec velit
@@ -92,26 +100,7 @@
     </section>
 </main>
 
-<footer>
-    &copy; 2026 Konstantin Goryagin. All rights reserved.
-</footer>
-
-<script>
-    const toggleButtons = document.querySelectorAll(".article-toggle");
-
-    toggleButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-            const targetId = button.getAttribute("aria-controls");
-            const target = document.getElementById(targetId);
-            const isExpanded = button.getAttribute("aria-expanded") === "true";
-
-            button.setAttribute("aria-expanded", String(!isExpanded));
-            button.textContent = isExpanded ? "Read full article" : "Collapse article";
-            target.hidden = isExpanded;
-            button.closest(".article-section").classList.toggle("is-expanded", !isExpanded);
-        });
-    });
-</script>
+<footer data-site-footer></footer>
 
 </body>
 </html>
