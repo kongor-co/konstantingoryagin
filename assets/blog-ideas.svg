@@ -3,18 +3,18 @@
   <desc id="desc">Abstract illustration with paths and idea nodes.</desc>
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#022c22"/>
-      <stop offset="50%" stop-color="#0f766e"/>
-      <stop offset="100%" stop-color="#84cc16"/>
+      <stop offset="0%" stop-color="#101010"/>
+      <stop offset="50%" stop-color="#313131"/>
+      <stop offset="100%" stop-color="#616161"/>
     </linearGradient>
   </defs>
   <rect width="1600" height="900" fill="url(#bg)"/>
-  <path d="M180 700c140-180 290-270 450-270s260 70 390 70 230-60 400-220" fill="none" stroke="rgba(240,253,244,0.78)" stroke-width="24" stroke-linecap="round"/>
-  <circle cx="310" cy="540" r="54" fill="#dcfce7"/>
-  <circle cx="650" cy="430" r="42" fill="#bbf7d0"/>
-  <circle cx="1040" cy="460" r="50" fill="#dcfce7"/>
-  <circle cx="1380" cy="280" r="36" fill="#bbf7d0"/>
-  <rect x="170" y="160" width="420" height="220" rx="34" fill="rgba(240,253,244,0.08)" stroke="rgba(240,253,244,0.2)"/>
-  <rect x="240" y="230" width="220" height="24" rx="12" fill="#f0fdf4"/>
-  <rect x="240" y="288" width="280" height="18" rx="9" fill="rgba(240,253,244,0.8)"/>
+  <path d="M180 700c140-180 290-270 450-270s260 70 390 70 230-60 400-220" fill="none" stroke="rgba(255,245,204,0.8)" stroke-width="24" stroke-linecap="round"/>
+  <circle cx="310" cy="540" r="54" fill="#f4c542"/>
+  <circle cx="650" cy="430" r="42" fill="#ffd95e"/>
+  <circle cx="1040" cy="460" r="50" fill="#f4c542"/>
+  <circle cx="1380" cy="280" r="36" fill="#ffd95e"/>
+  <rect x="170" y="160" width="420" height="220" rx="34" fill="rgba(255,245,204,0.08)" stroke="rgba(255,245,204,0.2)"/>
+  <rect x="240" y="230" width="220" height="24" rx="12" fill="#fff3c4"/>
+  <rect x="240" y="288" width="280" height="18" rx="9" fill="rgba(255,243,196,0.8)"/>
 </svg>

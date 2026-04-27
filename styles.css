@@ -1,14 +1,21 @@
 :root {
   color-scheme: dark;
-  --bg: #0b1220;
-  --surface: #111827;
-  --surface-muted: #192334;
-  --surface-strong: #1f2b40;
-  --text: #f8fafc;
-  --muted: #94a3b8;
-  --primary: #60a5fa;
-  --primary-soft: rgba(96, 165, 250, 0.16);
-  --border: #263449;
+  --bg: #090909;
+  --surface: #141414;
+  --surface-muted: #1d1d1d;
+  --surface-strong: #262626;
+  --text: #f5f5f5;
+  --muted: #b3b3b3;
+  --primary: #f4c542;
+  --primary-strong: #ffd95e;
+  --primary-soft: rgba(244, 197, 66, 0.16);
+  --primary-border-soft: rgba(244, 197, 66, 0.24);
+  --primary-border-strong: rgba(244, 197, 66, 0.36);
+  --border: #303030;
+  --header-bg: rgba(12, 12, 12, 0.88);
+  --bg-accent: rgba(244, 197, 66, 0.08);
+  --button-shadow: 0 12px 20px rgba(244, 197, 66, 0.22);
+  --button-shadow-hover: 0 16px 26px rgba(244, 197, 66, 0.28);
   --shadow: 0 18px 35px rgba(0, 0, 0, 0.4);
   --space-1: 0.5rem;
   --space-2: 0.75rem;
@@ -20,16 +27,23 @@
 
 :root[data-theme="light"] {
   color-scheme: light;
-  --bg: #f5f7fb;
+  --bg: #f6f6f4;
   --surface: #ffffff;
-  --surface-muted: #f8fafc;
-  --surface-strong: #eef2f7;
-  --text: #111827;
-  --muted: #6b7280;
-  --primary: #2563eb;
-  --primary-soft: rgba(37, 99, 235, 0.12);
-  --border: #e5e7eb;
-  --shadow: 0 18px 35px rgba(15, 23, 42, 0.08);
+  --surface-muted: #f0f0ec;
+  --surface-strong: #e6e6e0;
+  --text: #121212;
+  --muted: #5f5f5a;
+  --primary: #b8860b;
+  --primary-strong: #8f6a00;
+  --primary-soft: rgba(184, 134, 11, 0.12);
+  --primary-border-soft: rgba(184, 134, 11, 0.22);
+  --primary-border-strong: rgba(184, 134, 11, 0.34);
+  --border: #d7d7d1;
+  --header-bg: rgba(255, 255, 255, 0.9);
+  --bg-accent: rgba(184, 134, 11, 0.08);
+  --button-shadow: 0 12px 20px rgba(184, 134, 11, 0.18);
+  --button-shadow-hover: 0 16px 26px rgba(184, 134, 11, 0.24);
+  --shadow: 0 18px 35px rgba(20, 20, 20, 0.08);
 }
 
 :root[data-theme="dark"] {
@@ -48,7 +62,7 @@ body {
   margin: 0;
   font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
   background:
-    radial-gradient(circle at top right, rgba(96, 165, 250, 0.08), transparent 32%),
+    radial-gradient(circle at top right, var(--bg-accent), transparent 32%),
     linear-gradient(180deg, var(--bg), var(--bg));
   color: var(--text);
   line-height: 1.6;
@@ -63,17 +77,13 @@ img {
 }
 
 header {
-  background: rgba(17, 24, 39, 0.88);
+  background: var(--header-bg);
   border-bottom: 1px solid var(--border);
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   position: sticky;
   top: 0;
   z-index: 1000;
   backdrop-filter: blur(16px);
-}
-
-:root[data-theme="light"] header {
-  background: rgba(255, 255, 255, 0.88);
 }
 
 .skip-link {
@@ -83,7 +93,7 @@ header {
   padding: 0.7rem var(--space-3);
   border-radius: 999px;
   background: var(--primary);
-  color: #fff;
+  color: #121212;
   font-weight: 600;
   text-decoration: none;
   transition: top 0.2s ease;
@@ -166,13 +176,13 @@ nav a:hover,
 nav a:focus-visible {
   color: var(--primary);
   background: var(--primary-soft);
-  border-color: rgba(37, 99, 235, 0.2);
+  border-color: var(--primary-border-soft);
 }
 
 nav a[aria-current="page"] {
   color: var(--primary);
   background: var(--primary-soft);
-  border-color: rgba(37, 99, 235, 0.3);
+  border-color: var(--primary-border-strong);
 }
 
 main {
@@ -258,7 +268,7 @@ h3 {
 .section-card-link:hover,
 .section-card-link:focus-visible {
   transform: translateY(-2px);
-  border-color: rgba(37, 99, 235, 0.35);
+  border-color: var(--primary-border-strong);
   box-shadow: 0 20px 34px rgba(15, 23, 42, 0.12);
 }
 
@@ -521,8 +531,8 @@ h3 {
 
 .button-primary {
   background: var(--primary);
-  color: #fff;
-  box-shadow: 0 12px 20px rgba(37, 99, 235, 0.25);
+  color: #121212;
+  box-shadow: var(--button-shadow);
 }
 
 .button-primary:hover,
@@ -534,7 +544,7 @@ h3 {
 
 .button-primary:hover,
 .button-primary:focus-visible {
-  box-shadow: 0 16px 26px rgba(37, 99, 235, 0.28);
+  box-shadow: var(--button-shadow-hover);
 }
 
 .button-secondary {
