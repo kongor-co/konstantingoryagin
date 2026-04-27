@@ -344,6 +344,18 @@ h3 {
   color: var(--muted);
 }
 
+.article-body ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: var(--text);
+  display: grid;
+  gap: var(--space-2);
+}
+
+.article-body li {
+  padding-left: 0.15rem;
+}
+
 .article-body {
   border-top: 1px solid var(--border);
   padding-top: var(--space-3);
