@@ -287,6 +287,37 @@ h3 {
   box-shadow: var(--shadow);
 }
 
+.books-index-panel {
+  margin-bottom: var(--space-5);
+}
+
+.books-index {
+  margin-top: var(--space-4);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-2);
+}
+
+.books-index a {
+  display: block;
+  padding: 0.8rem 0.95rem;
+  border-radius: 14px;
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.books-index a:hover,
+.books-index a:focus-visible {
+  transform: translateY(-1px);
+  border-color: var(--primary-border-strong);
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
 .page-intro {
   margin-bottom: var(--space-5);
 }
@@ -482,6 +513,7 @@ h3 {
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: var(--space-4);
+  scroll-margin-top: 8.5rem;
 }
 
 .book-row:nth-child(even) {
@@ -679,6 +711,33 @@ footer {
   color: var(--muted);
 }
 
+.back-to-top {
+  position: fixed;
+  right: var(--space-4);
+  bottom: var(--space-4);
+  width: 3rem;
+  height: 3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--primary);
+  color: var(--primary-text);
+  text-decoration: none;
+  font-size: 1.35rem;
+  font-weight: 700;
+  box-shadow: var(--button-shadow);
+  z-index: 900;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible {
+  transform: translateY(-2px);
+  background: var(--primary-strong);
+  box-shadow: var(--button-shadow-hover);
+}
+
 @media (max-width: 720px) {
   .header-inner {
     padding: var(--space-4);
@@ -711,6 +770,10 @@ footer {
     padding: 0 var(--space-4) var(--space-4);
   }
 
+  .books-index {
+    grid-template-columns: 1fr;
+  }
+
   .button-row {
     flex-direction: column;
   }
@@ -722,5 +785,10 @@ footer {
 
   .theme-toggle {
     align-self: flex-start;
+  }
+
+  .back-to-top {
+    right: var(--space-3);
+    bottom: var(--space-3);
   }
 }
