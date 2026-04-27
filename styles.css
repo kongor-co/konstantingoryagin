@@ -338,27 +338,63 @@ h3 {
   font-size: 1.5rem;
 }
 
+.article-body {
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-4);
+  display: grid;
+  gap: var(--space-4);
+}
+
 .article-excerpt,
 .article-body p {
   margin: 0;
   color: var(--muted);
 }
 
+.article-body p {
+  line-height: 1.8;
+}
+
+.article-body .article-lead {
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+.article-body strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.article-body em {
+  color: var(--text);
+}
+
+.article-body h3 {
+  margin: 0;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border);
+  font-size: 1.08rem;
+  color: var(--text);
+}
+
 .article-body ul {
   margin: 0;
-  padding-left: 1.5rem;
+  padding: var(--space-3) 0 var(--space-3) 1.5rem;
   color: var(--text);
   display: grid;
   gap: var(--space-2);
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  border-radius: 16px;
 }
 
 .article-body li {
   padding-left: 0.15rem;
 }
 
-.article-body {
+.article-body .article-note {
+  padding-top: var(--space-4);
   border-top: 1px solid var(--border);
-  padding-top: var(--space-3);
 }
 
 .article-toggle {
