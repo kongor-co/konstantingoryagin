@@ -801,13 +801,28 @@ footer {
 
 @media (max-width: 720px) {
   .header-inner {
-    padding: 0.6rem var(--space-3);
-    gap: 0;
-    transition: padding 0.2s ease;
+    padding: var(--space-4);
+    gap: var(--space-3);
+    transition: padding 0.2s ease, gap 0.2s ease;
   }
 
   .header-top {
-    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    max-height: 8rem;
+    opacity: 1;
+    overflow: hidden;
+    visibility: visible;
+    transform: translateY(0);
+    transition:
+      max-height 0.25s ease,
+      opacity 0.2s ease,
+      transform 0.2s ease,
+      visibility 0s linear;
+  }
+
+  .site-brand {
+    font-size: 1.85rem;
   }
 
   nav {
@@ -825,6 +840,20 @@ footer {
 
   header.is-compact .header-inner {
     padding: 0.25rem var(--space-1);
+    gap: 0;
+  }
+
+  header.is-compact .header-top {
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-0.5rem);
+    pointer-events: none;
+    transition:
+      max-height 0.25s ease,
+      opacity 0.16s ease,
+      transform 0.2s ease,
+      visibility 0s linear 0.25s;
   }
 
   header.is-compact nav {
@@ -877,6 +906,10 @@ footer {
   .button-primary,
   .button-secondary {
     width: 100%;
+  }
+
+  .theme-toggle {
+    align-self: flex-start;
   }
 
   .back-to-top {
