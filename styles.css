@@ -313,7 +313,7 @@ h3 {
   padding: calc(var(--space-6) + var(--space-2)) 0;
 }
 
-.about-section + .about-section:not(.about-now) {
+.about-prose + .about-prose {
   border-top: 1px solid var(--border);
 }
 
@@ -394,6 +394,8 @@ h3 {
 
 .about-prose {
   max-width: 52rem;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .about-prose p {
