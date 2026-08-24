@@ -111,6 +111,18 @@ const initializeHeader = () => {
   if (activeLink) {
     activeLink.setAttribute("aria-current", "page");
   }
+
+  const mobileHeaderQuery = window.matchMedia("(max-width: 720px)");
+  const updateHeaderSize = () => {
+    headerTarget.classList.toggle(
+      "is-compact",
+      mobileHeaderQuery.matches && window.scrollY > 48
+    );
+  };
+
+  updateHeaderSize();
+  window.addEventListener("scroll", updateHeaderSize, { passive: true });
+  mobileHeaderQuery.addEventListener?.("change", updateHeaderSize);
 };
 
 const initializeFooter = () => {
