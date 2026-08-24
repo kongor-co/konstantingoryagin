@@ -230,6 +230,67 @@ h3 {
   max-width: 42rem;
 }
 
+.home-intro {
+  max-width: 52rem;
+  margin: 0 auto var(--space-6);
+  padding: var(--space-5) 0;
+}
+
+.home-intro h2 {
+  margin: 0 0 var(--space-2);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.home-intro h3 {
+  margin: 0 0 var(--space-4);
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+}
+
+.home-intro p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.home-intro p + p {
+  margin-top: var(--space-3);
+}
+
+.home-divider {
+  margin: 0 0 var(--space-6);
+  border: 0;
+  border-top: 1px solid var(--border);
+}
+
+.home-section-list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-5);
+}
+
+.home-section-card {
+  padding: var(--space-5);
+  gap: var(--space-3);
+}
+
+.home-section-card h2 {
+  font-size: 1.5rem;
+}
+
+.home-section-card p {
+  max-width: 52rem;
+  line-height: 1.7;
+}
+
+.home-section-card .button-row {
+  margin-top: auto;
+  padding-top: var(--space-2);
+}
+
+.home-section-card .button-primary span {
+  margin-left: 0.3rem;
+}
+
 .section-grid {
   display: grid;
   gap: var(--space-4);
