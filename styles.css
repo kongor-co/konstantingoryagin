@@ -294,7 +294,9 @@ h3 {
 .about-intro {
   max-width: 52rem;
   padding: var(--space-5) 0;
+  margin-right: auto;
   margin-bottom: calc(var(--space-6) + var(--space-4));
+  margin-left: auto;
 }
 
 .about-intro h1 {
@@ -319,7 +321,7 @@ h3 {
 
 .about-section-heading {
   max-width: 52rem;
-  margin-bottom: var(--space-5);
+  margin: 0 auto var(--space-5);
 }
 
 .about-section h2 {
