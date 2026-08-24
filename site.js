@@ -113,11 +113,23 @@ const initializeHeader = () => {
   }
 
   const mobileHeaderQuery = window.matchMedia("(max-width: 720px)");
+  let mobileHeaderCollapsePoint = headerTarget.offsetHeight;
   const updateHeaderSize = () => {
-    headerTarget.classList.toggle(
-      "is-compact",
-      mobileHeaderQuery.matches && window.scrollY > 48
-    );
+    if (!mobileHeaderQuery.matches) {
+      headerTarget.classList.remove("is-compact");
+      mobileHeaderCollapsePoint = headerTarget.offsetHeight;
+      return;
+    }
+
+    if (!headerTarget.classList.contains("is-compact")) {
+      mobileHeaderCollapsePoint = headerTarget.offsetHeight;
+    }
+
+    if (window.scrollY > mobileHeaderCollapsePoint) {
+      headerTarget.classList.add("is-compact");
+    } else if (window.scrollY <= 0) {
+      headerTarget.classList.remove("is-compact");
+    }
   };
 
   updateHeaderSize();

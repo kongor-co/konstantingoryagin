@@ -803,7 +803,6 @@ footer {
   .header-inner {
     padding: var(--space-4);
     gap: var(--space-3);
-    transition: padding 0.2s ease, gap 0.2s ease;
   }
 
   .header-top {
@@ -813,12 +812,6 @@ footer {
     opacity: 1;
     overflow: hidden;
     visibility: visible;
-    transform: translateY(0);
-    transition:
-      max-height 0.25s ease,
-      opacity 0.2s ease,
-      transform 0.2s ease,
-      visibility 0s linear;
   }
 
   .site-brand {
@@ -836,6 +829,7 @@ footer {
     font-size: 0.85rem;
     text-align: center;
     white-space: nowrap;
+    transition: none;
   }
 
   header.is-compact .header-inner {
@@ -847,13 +841,7 @@ footer {
     max-height: 0;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-0.5rem);
     pointer-events: none;
-    transition:
-      max-height 0.25s ease,
-      opacity 0.16s ease,
-      transform 0.2s ease,
-      visibility 0s linear 0.25s;
   }
 
   header.is-compact nav {
