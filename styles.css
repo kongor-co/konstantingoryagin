@@ -1994,4 +1994,9 @@ footer {
   .health-section {
     padding: var(--space-6) 0;
   }
+
+  .health-section.health-no-optimization,
+  .health-section.health-current {
+    padding: var(--space-5);
+  }
 }
