@@ -1073,8 +1073,7 @@ footer {
 .health-hero,
 .health-section,
 .health-philosophy,
-.health-disclaimer,
-.health-related {
+.health-disclaimer {
   max-width: 52rem;
   margin-right: auto;
   margin-left: auto;
@@ -1136,8 +1135,7 @@ footer {
 }
 
 .health-section h2,
-.health-philosophy h2,
-.health-related h2 {
+.health-philosophy h2 {
   margin: 0 0 var(--space-5);
   font-size: clamp(2rem, 5vw, 3.15rem);
 }
@@ -1152,8 +1150,7 @@ footer {
 .health-mini-callout h3,
 .health-principles h3,
 .health-struggles h3,
-.health-gym-item h3,
-.health-related h3 {
+.health-gym-item h3 {
   margin: 0 0 var(--space-4);
   font-size: clamp(1.35rem, 3vw, 1.7rem);
 }
@@ -1469,45 +1466,6 @@ footer {
   line-height: 1.75;
 }
 
-.health-related {
-  margin-top: clamp(3.5rem, 8vw, 6rem);
-  padding-top: var(--space-5);
-}
-
-.health-related-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-5);
-}
-
-.health-related-grid a {
-  padding: var(--space-4) 0;
-  text-decoration: none;
-  border-top: 2px solid var(--border);
-  transition: color 0.2s ease, border-color 0.2s ease;
-}
-
-.health-related-grid a:hover,
-.health-related-grid a:focus-visible {
-  color: var(--primary);
-  border-color: var(--primary);
-}
-
-.health-related-grid a:focus-visible {
-  outline: 3px solid var(--primary);
-  outline-offset: 4px;
-}
-
-.health-related-grid h3 {
-  margin-bottom: var(--space-2);
-}
-
-.health-related-grid p {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.65;
-}
-
 @media (max-width: 900px) {
   .health-gym-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1561,8 +1519,7 @@ footer {
 
   .health-check-list,
   .health-long-term-list,
-  .health-gym-grid,
-  .health-related-grid {
+  .health-gym-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 
@@ -1642,8 +1599,7 @@ footer {
 }
 
 .health-section h2,
-.health-philosophy h2,
-.health-related h2 {
+.health-philosophy h2 {
   margin-bottom: var(--space-5);
   font-size: clamp(1.85rem, 4vw, 2.5rem);
 }
@@ -1877,15 +1833,6 @@ footer {
   max-width: 46rem;
 }
 
-.health-related {
-  max-width: 52rem;
-}
-
-.health-related-grid a {
-  padding: var(--space-4) 0;
-  border-top: 3px solid var(--primary-border-strong);
-}
-
 @media (max-width: 720px) {
   .health-hero {
     padding-top: var(--space-5);
@@ -1920,5 +1867,131 @@ footer {
 
   .health-gym-item:hover {
     transform: none;
+  }
+}
+
+/* Health alignment with the About page */
+.health-hero {
+  max-width: 52rem;
+  margin: 0 auto calc(var(--space-6) + var(--space-4));
+  padding: var(--space-5) 0;
+}
+
+.health-hero h1 {
+  margin: 0 0 var(--space-4);
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+}
+
+.health-hero .health-lead {
+  max-width: 44rem;
+  margin-left: 0;
+  column-count: 1;
+  column-gap: normal;
+  column-rule: 0;
+}
+
+.health-hero .health-lead p,
+.health-hero .health-lead p:first-child {
+  color: var(--muted);
+  font-size: 1.08rem;
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+.health-pullquote {
+  max-width: 44rem;
+  margin: var(--space-5) 0;
+  padding: 0.2rem 0 0.2rem var(--space-4);
+  border-left: 4px solid var(--primary);
+}
+
+.health-pullquote p {
+  color: var(--text);
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.health-section {
+  max-width: 52rem;
+  padding: calc(var(--space-6) + var(--space-2)) 0;
+  border-top: 0;
+}
+
+.health-section + .health-section:not(.health-no-optimization):not(.health-current) {
+  border-top: 1px solid var(--border);
+}
+
+.health-section > .health-prose:first-child > h2::before {
+  display: none;
+}
+
+.health-section h2,
+.health-philosophy h2 {
+  margin: 0 0 var(--space-3);
+  font-size: clamp(1.75rem, 3vw, 2.35rem);
+}
+
+.health-prose p,
+.health-emphasis {
+  font-size: 1rem !important;
+  line-height: 1.8 !important;
+}
+
+.health-subsection {
+  padding-top: var(--space-4);
+  border-top: 3px solid var(--primary-border-strong);
+}
+
+.health-principles,
+.health-mini-callout,
+.health-current,
+.health-no-optimization,
+.health-philosophy {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+.health-no-optimization {
+  max-width: 52rem;
+  border-top: 1px solid var(--border);
+}
+
+.health-current {
+  border-top: 1px solid var(--border);
+}
+
+.health-philosophy {
+  max-width: 52rem;
+  border-left: 1px solid var(--border);
+}
+
+.health-philosophy-lines p {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.health-gym-item,
+.health-gym-item:hover {
+  transform: none;
+  border-color: var(--border);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.06);
+}
+
+@media (max-width: 720px) {
+  .health-hero {
+    margin-bottom: var(--space-6);
+    padding: var(--space-5) 0;
+  }
+
+  .health-hero .health-lead p,
+  .health-hero .health-lead p:first-child {
+    font-size: 1rem;
+  }
+
+  .health-section {
+    padding: var(--space-6) 0;
   }
 }
